@@ -34,7 +34,7 @@ app.get("*", (req, res)=>{
 });
 
 app.listen(port, ()=>{
-    console.log(`Listening on //localhost:${port}\nThread is Sleeping....`);
+    console.log(`Server running on Port ${port}`);
 });
 
 

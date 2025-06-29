@@ -3,210 +3,37 @@
 <head>
     {{>headerLinks}}
   <title>Weather App</title>  
-  <style>
-    /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #6dd5fa, #2980b9);
-    color: white;
-    text-align: center;
-}
-
-.main_header {
-    margin-top: 8rem;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    display: flex;
-    justify-content: center;
-}
-
-.main_content form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-#cityName {
-    width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-#submitButton {
-    padding: 10px 20px;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#submitButton:hover {
-    background-color: #2980b9;
-}
-
-/* temp input fields style code */
-
-
-.temp_form input[type="text"] {
-    width: 100%;
-    padding: 2rem 5rem 2rem 2rem;
-    background: #1e202b;
-    color: white;
-    outline: none;
-    border: none;
-    font-size: 1.7rem;
-    border-radius: 3rem;
-}
-
-/* Weather Information Display */
-.tempInformation {
-    margin-top: 30px;
-    margin-right: 30rem;
-    width:  80%;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    
-}
-
-.top_layer {
-    display: flex;
-    justify-content: space-between; /* Pushes items to opposite corners */
-    align-items: center; /* Vertically centers them */
-    width: 100%; /* Ensure it takes the full width of the parent container */
-    padding: 0 20px; /* Add some padding if needed */
-    margin-top: -60px;
-    bottom: -30px;
-}
-
-#day {
-    font-size: 3rem; 
-    text-align: left;
-}
-
-#today_data {
-    font-size: 3rem; 
-    text-align: right;
-}
-
-.top_layer p, .main_layer p {
-    font-size: 24px;
-    margin: 60px 0;
-    padding: -10rem;
-}
-
-.main_layer {
-    margin: auto;
-    margin-bottom: 0rem;
-    padding: 10;
-}
-
-#temp {
-    font-size: 48px;
-    font-weight: bold;
-}
-
-#city_name {
-    font-size: 32px;
-    margin-top: 10px;
-    
-}
-
-
-.middle_layer {
-    display: flex;
-    justify-content: space-around; /* Pushes items to opposite corners */
-    align-items: center; /* Vertically centers them */
-    width: 100%; /* Ensure it takes the full width of the parent container */
-    height: 100px;
-    padding: 0 0px; /* Add some padding if needed */
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-}
-
-#temp {
-    font-size: 50px; /* Customize size */
-    text-align: left;
-}
-
-#temp_status {
-    font-size: 5.5rem; /* Customize size */
-    text-align: right;
-}
-
-.data_hide {
-    {{!-- visibility: collapse; --}}
-    transition: all 0.3s linear;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main_content form {
-        flex-direction: column;
-    }
-
-    #cityName {
-        width: 100%;
-    }
-
-    #submitButton {
-        width: 100%;
-    }
-
-    .tempInformation {
-        padding: 10px;
-    }
-}
-
-/*style for weather icons */
-#temp_status {
-    height: 55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-
-
-  </style>
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     {{>navbar}}
     <!-- main header  -->
-    <div class="container-fluid main_header" >
+    <div class="container main_header" >
         <div class="row">
           <div class="col-md-10 col-10 mx-auto">
                <div class="main_content">
-                <form action="temp_form">
-                    <input type="text" id="cityName" placeholder="Enter City Name" autocomplete="off">
-                    <input type="submit" value="search" id="submitButton">
-                </form>
-               </div> 
-                <div class="tempInformation">
-                    <div class="top_layer">
-                        <p id="day">Sunday</p> 
-                        <p id="today_data">13 OCT</p>
-                    </div>
-                    <div class="main_layer">
-                        <p id="city_name"> Output </p>
-                        <div class="middle_layer data_hide">
-                            <p id="temp"><span id="temp_real_val">--</span><sup>o</sup>C</p>
-                            <p id="temp_status"><i class="">--</i></p>
+                    <div class="innerMain">
+                        <div class="innerMain-upper">
+                            <form action="temp_form">
+                                <input type="text" id="cityName" placeholder="Enter City Name here" autocomplete="off">
+                                <input type="submit" value="Search" id="submitButton">
+                            </form>
+                        </div>
+                        <div class="tempInformation">
+                            <div class="topLayer">
+                                <p id="day">Sunday</p> 
+                                <p id="today_data">13 OCT</p>
+                            </div>
+                        </div>
+                        <div class="main_layer">
+                            <p id="city_name"> Output </p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span id="temp_real_val">--</span><sup>o</sup>C</p>
+                                <p id="temp_status"><i class="">--</i></p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div> 
           </div>
         </div>
     </div>

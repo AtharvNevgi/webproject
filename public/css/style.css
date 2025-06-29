@@ -127,6 +127,96 @@ body {
 
 /* weather page styling  */
 
+.main_content {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerMain {
+    width: 50%;
+    height: 400px;
+    background-color: rgb(21, 21, 21);
+    border-radius: 2rem;
+}
+.innerMain-upper {
+    width: 100%;
+    height: 100px;
+    /* background-color: rgb(65, 56, 56); */
+    border-bottom: 2px solid rgb(56, 56, 56);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cityName {
+    width: 240px;
+    height: 40px;
+    padding: 20px;
+    border: 1px solid #353f46;
+    background: rgb(21, 21, 21);
+    color: gray;
+    font-size: large;
+}
+#cityName:hover {
+    background-color: #1e272e;
+}
+#submitButton {
+    width: 60px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: rgb(112, 103, 103);
+    background-color: rgb(21, 21, 21);
+    border:1px solid #353f46;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#submitButton:hover {
+    background-color: #1e272e;
+    /* border: 1px solid white; */
+    color: white;
+}
+.tempInformation{
+    width: 100%;
+    height: 100px;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topLayer{
+    width: 100%;
+    height: 80px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+    font-size: 30px;
+    color: white;
+}
+#city_name {
+    width: 100%;
+    height: 50px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+}
+.middle_layer {
+    width: 100%;
+    height: 100px;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    padding: 20px;
+    color: white;
+}
 
 
 /* footer code  */
@@ -168,3 +258,25 @@ footer p {
 }
 
 
+/* media query  */
+
+@media (max-width: 998px) {
+  .innerMain {
+    width: 100%;
+    height: 80%;
+    min-width: 0;
+  }
+  #cityName {
+    height: 30px;
+    display: flex;
+  }
+  .innerMain-upper {
+    height: 150px;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}   

@@ -50,6 +50,7 @@ body {
 
 .navbar-toggler {
     background-color: grey;
+    font-size: 30px;
 }
 
 .fa-snowflake {
